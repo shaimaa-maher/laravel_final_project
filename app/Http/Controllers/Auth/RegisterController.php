@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'avatar' => ['sometimes','image','mimes:jpeg,jpg,png','max:5000']
         ]);
     }
 
@@ -65,6 +66,19 @@ class RegisterController extends Controller
      */
     public function create(array $data)
     {
+        if(request()->has('avatar')){
+            $avatar = request()->file('avatar');
+            $avatar_name = time().'.'.$avatar->getClientOriginalExtension();
+            $avatar_path = public_path('bower_components/AdminLTE/dist/img/');
+            $avatar->move($avatar_path,$avatar_name);
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'role' =>$data['role'],
+                'avatar_url'=> 'bower_components/AdminLTE/dist/img/'.$avatar_name,
+            ]);
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

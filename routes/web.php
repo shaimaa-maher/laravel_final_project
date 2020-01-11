@@ -21,6 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin','UserController@index');
-Route::delete('/admin/{user}','UserController@destroy')->name('users.destroy');
+Route::get('/users','UserController@index');
+Route::delete('/users/{user}','UserController@destroy')->name('users.destroy');
+Route::get('/users/{user}/edit','UserController@edit')->name('users.edit');
 

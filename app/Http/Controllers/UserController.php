@@ -9,14 +9,22 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('admin.index',[
+        return view('users.index',[
             'users' => User::paginate(3)
+        ]);
+    }
+
+    public function edit($user)
+    {
+        $user = User::find($user);
+        return view('users.edit',[
+            'user' => $user
         ]);
     }
 
     function destroy($user){
         
         $delte =(User::where('id','=',$user)->first())->delete();
-         return redirect()->route('admin.index');
+         return redirect()->route('users.index');
     }
 }

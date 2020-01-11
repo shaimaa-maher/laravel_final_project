@@ -37,6 +37,7 @@
                   <form method="post" action="{{route('users.destroy',['user' => $user['id'] ])}}" style="display: inline-block">
                 @csrf
                 @method('delete')   
+               
                 @if(!(auth()->user()->id == $user['id']))
                 <button onclick="return confirm('Are You Sure You Want To delete')" class="btn bg-danger" type="submit">Delete</button>
                  @endif  
