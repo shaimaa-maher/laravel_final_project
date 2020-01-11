@@ -25,3 +25,6 @@ Route::get('/users','UserController@index');
 Route::delete('/users/{user}','UserController@destroy')->name('users.destroy');
 Route::get('/users/{user}/edit','UserController@edit')->name('users.edit');
 
+Route::get('/courses','CourseController@index');
+
+

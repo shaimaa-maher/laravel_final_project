@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+    
     public function supporter()
     {
         return $this->hasMany('App\Supporter');
