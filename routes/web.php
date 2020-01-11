@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,4 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin/index', 'admin/UserController@index');
+Route::get('/admin','UserController@index');
+Route::delete('/admin/{user}','UserController@destroy')->name('users.destroy');
+
