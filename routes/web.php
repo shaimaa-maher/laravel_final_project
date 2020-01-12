@@ -27,4 +27,12 @@ Route::get('/users/{user}/edit','UserController@edit')->name('users.edit');
 
 Route::get('/courses','CourseController@index');
 
+Route::get('/teacher/courses','CourseController@show')->name('teacher.index');
+Route::get('/teacher/create','CourseController@create');
+
+// Route::get('/courses/{course}','CourseController@view')->name('courses.view');
+// Route::get('/courses/{course}/edit','CourseController@edit')->name('courses.edit');
+// Route::put('/courses/{course}','CourseController@update');
+
+
 

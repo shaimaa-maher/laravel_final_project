@@ -226,7 +226,7 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="#">Courses</a></li>
+              <li><a href="{{url('/teacher/courses')}}">Courses</a></li>
               <li><a href="#">Supporters</a></li>
             </ul>
           </li>
