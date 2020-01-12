@@ -14,12 +14,22 @@ class UserController extends Controller
         ]);
     }
 
+   
     public function edit($user)
     {
         $user = User::find($user);
-        return view('users.edit',[
-            'user' => $user
-        ]);
+      return view('users.edit',[
+          'user'=>$user
+      ]);
+    }
+
+    function update(User $user,Request $request){
+        $user->name= $request->name;
+        $user->email= $request->email;
+        $user->avatar_url= $request->avatar;
+
+        $user->save();
+        return redirect()->route('users.index');
     }
 
     function destroy($user){
@@ -27,4 +37,15 @@ class UserController extends Controller
         $delte =(User::where('id','=',$user)->first())->delete();
          return redirect()->route('users.index');
     }
+
+
+
+    public function show($user)
+    {
+        $user = User::find($user);
+      return view('users.view',[
+          'user'=>$user
+      ]);
+      }
+
 }

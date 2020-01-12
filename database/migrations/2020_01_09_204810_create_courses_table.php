@@ -20,10 +20,6 @@ class CreateCoursesTable extends Migration
             $table->text('cover_img');
             $table->date('start_date');
             $table->date('end_date');
-            $table->unsignedBigInteger('teacher_id');
-            $table->foreign('teacher_id')->references('id')->on('users');
-            $table->unsignedBigInteger('supporter_id');
-            $table->foreign('supporter_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

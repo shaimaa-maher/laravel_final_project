@@ -21,9 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/users','UserController@index');
+Route::get('/users','UserController@index')->name('users.index');
 Route::delete('/users/{user}','UserController@destroy')->name('users.destroy');
 Route::get('/users/{user}/edit','UserController@edit')->name('users.edit');
+Route::put(	'/users/{user}', 'UserController@update')->name('users.update');
+Route::get('/users/{user}', 'UserController@show')->name('users.show');
 
 Route::get('/courses','CourseController@index');
 

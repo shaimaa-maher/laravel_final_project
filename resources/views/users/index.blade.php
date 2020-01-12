@@ -33,12 +33,14 @@
                   <td>{{$user['name']}}</td>
                   <td>{{$user['email']}}</td>
                   <td>{{$user['role']}}</td>
-                  <td>
+                  @if(!(auth()->user()->id == $user['id']))
+
+                  <td> <a href="{{ route('users.show',['user' => $user['id']]) }}"class="btn btn-success text-light " >View </a>
+                       <a  href="{{ route('users.edit',['user' => $user['id']]) }}" class="btn btn-info text-light ">Edit</a>
                   <form method="post" action="{{route('users.destroy',['user' => $user['id'] ])}}" style="display: inline-block">
                 @csrf
                 @method('delete')   
                
-                @if(!(auth()->user()->id == $user['id']))
                 <button onclick="return confirm('Are You Sure You Want To delete')" class="btn bg-danger" type="submit">Delete</button>
                  @endif  
             </form>

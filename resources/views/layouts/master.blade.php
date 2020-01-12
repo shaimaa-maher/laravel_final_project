@@ -160,9 +160,7 @@
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
-                  <div class="pull-left">
-                    <a href="{{route('users.edit',['user' => auth()->user()->id])}}" class="btn btn-default btn-flat">Change Image</a>
-                  </div>
+                  
                   <div class="pull-right">
                     <a  class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
