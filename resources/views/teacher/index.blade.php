@@ -40,7 +40,8 @@
       <td>{{$value['supporter_id']}}</td>
       <td>{{$value['created_at']}}</td>
       <td>
-      <a class="btn  btn-success" href="{{url('/')}}"> View</a>
+      <a class="btn  btn-success" href="{{route('teacher.view',['course' => $value['id'] ])}}"> View</a>
+      @role('admin|teacher')
       <a class="btn  btn-primary" >Edit</a>
       <form method="POST" action ="/courses/{{$value['id']}}/delete">
       @csrf
@@ -49,6 +50,7 @@
       Delete
       </button>
       </form>
+      @endrole
       </td>
       @endforeach
 

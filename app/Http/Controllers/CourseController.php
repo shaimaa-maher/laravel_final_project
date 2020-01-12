@@ -35,4 +35,16 @@ class CourseController extends Controller
 
         return redirect()->route('teacher.index');
     }
+
+    public function view($course)
+    {   
+        
+
+        return view('teacher.view',[
+            'course'=>Course::find($course),
+        
+        ]);
+        // another way return request()->post;
+    }
+
 }
