@@ -29,6 +29,8 @@ Route::get('/courses','CourseController@index');
 
 Route::get('/teacher/courses','CourseController@show')->name('teacher.index');
 Route::get('/teacher/create','CourseController@create');
+Route::post('/teacher/courses','CourseController@store');
+
 
 // Route::get('/courses/{course}','CourseController@view')->name('courses.view');
 // Route::get('/courses/{course}/edit','CourseController@edit')->name('courses.edit');

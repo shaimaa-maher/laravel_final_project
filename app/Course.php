@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+    protected $fillable = ['name', 'price','cover_img','start_date','end_date','teacher_id','supporter_id'];
     
     public function supporter()
     {

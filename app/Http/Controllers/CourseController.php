@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request\StoreCourseRequest;
+use Illuminate\Http\Request;
 use  App\Course;
 
 class CourseController extends Controller
@@ -20,7 +20,7 @@ class CourseController extends Controller
         return view('teacher.create');
     }
 
-    public  function store(StoreCourseRequest $request)
+    public  function store(Request $request)
     { 
         //create part.
         Course::create([
@@ -29,10 +29,10 @@ class CourseController extends Controller
             'cover_img' => $request->cover_img,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
-            'teacher_id' => $request->teacher_id,
+            'teacher_id' => auth()->user()->id,
             'supporter_id' => $request->supporter_id,
             ]);
 
-        return redirect()->route('courses.index');
+        return redirect()->route('teacher.index');
     }
 }
