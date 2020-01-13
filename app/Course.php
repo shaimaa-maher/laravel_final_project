@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+
+    protected $fillable = [
+        'name', 'start_date', 'end_date','cover_img' ,'teacher_id' , 'teacher_name'
+    ];
     
     public function supporter()
     {
@@ -25,5 +29,9 @@ class Course extends Model
     public function student()
     {
         return $this->belongsToMany('App\Course','student_course','course_id','student_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(App\User::class);
     }
 }
