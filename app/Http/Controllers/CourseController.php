@@ -6,6 +6,12 @@ use  App\Course;
 
 class CourseController extends Controller
 {
+    public function index(){
+         
+        return view('teacher.index', [
+            'courses' => Course::all()
+        ]);
+    }
     public function show()
     {
         
