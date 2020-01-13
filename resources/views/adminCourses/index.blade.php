@@ -32,7 +32,7 @@
                   <td>{{$course['id']}}</td>
                   <td>{{$course['name']}}</td>
                   <td>{{$course['price']}}</td>
-                  <td>{{$course['techer_id']}}</td>
+                  <td>{{$course['teacher_id']}}</td>
                   <td>{{$course['supporter_id']}}</td>
                  
                 </tr>

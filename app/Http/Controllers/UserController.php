@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Exceptions\Handler;
 
 use Illuminate\Http\Request;
 use App\User;
@@ -24,7 +25,15 @@ class UserController extends Controller
 
     function destroy($user){
         
-        $delte =(User::where('id','=',$user)->first())->delete();
+        $delte =(User::where('id','=',$user)->first());
+        
+        
+         try {
+             $delte->delete();
+            
+         }catch(mixed $e){
+             return "cant delete this elementS";
+         }
          return redirect()->route('users.index');
     }
 }

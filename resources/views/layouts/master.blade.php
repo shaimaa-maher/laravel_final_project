@@ -216,7 +216,18 @@
         @role('admin')
           <!-- Optionally, you can add icons to the links -->
           <li class="active"><a href="{{url('/users')}}"><i class="fa fa-link"></i> <span>Users</span></a></li>
-          <li><a href="{{url('/courses')}}"><i class="fa fa-link"></i> <span>Courses</span></a></li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-link"></i> <span>courses</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+            <li><a href="{{url('/adminCourses')}}"><i class="fa fa-link"></i> <span>All Courses</span></a></li>
+              <li><a href="{{url('adminCourses/create')}}">Create Course</a></li>
+            </ul>
+          </li>
+          
           @endrole
           @role('teacher')
           <li class="treeview">
