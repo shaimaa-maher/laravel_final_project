@@ -16,18 +16,18 @@
     <div class="form-group">
 
         <label>Name</label>
-        <input type="text" name="name" class="form-control">
+        <input type="text" name="name" class="form-control" value="{{$course->name}}" required>
         <label>Price</label>
-        <input type="text" class="form-control" name="price">
+        <input type="text" class="form-control" name="price" value="{{$course->price}}" required>
         <label>Cover_img</label>
-        <input type="file" name="cover_img" accept=".jpg,.png,.jpeg" class="form-control">
+        <input type="file" name="cover_img" accept=".jpg,.png,.jpeg" class="form-control" value="{{$course->cover_img}}" required>
         <label>Start_date</label>
-        <input type="date" name="start_date" class="form-control">
+        <input type="date" name="start_date" class="form-control" value="{{$course->start_date}}" required>
         <label>End_date</label>
-        <input type="date" name="end_date" class="form-control">
+        <input type="date" name="end_date" class="form-control" value="{{$course->end_date}}" required>
         <label>Supporter_id</label>
-        <input type="text" name="supporter_id" class="form-control">
-        
+        <input type="text" name="supporter_id" class="form-control" value="{{$course->supporter_id}}" required>
+
     </div>
 
 
