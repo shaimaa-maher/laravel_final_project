@@ -20,6 +20,7 @@ class CreateStudentsTable extends Migration
             $table->timestamp('email_verified_at');
             $table->string('password');
             $table->string('password_confirmation');
+            $table->enum('gender',['male','female'])->nullable();
             $table->string('birth_date');
             $table->string('profile_image');
             $table->timestamps();

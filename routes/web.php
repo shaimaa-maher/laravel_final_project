@@ -42,4 +42,8 @@ Route::patch("/supporter/{supporter}", 'SupporterController@update')->name('supp
 Route::delete('/supporters/{supporter}/delete','SupporterController@delete')->name('supporters.delete');
 
 
+Route::get('/statistics',function () {
+    return view('statistics');$users = DB::table('users')->count();
+});
+
 

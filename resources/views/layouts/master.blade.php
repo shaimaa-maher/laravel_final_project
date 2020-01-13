@@ -230,7 +230,7 @@
               <li><a href="{{route('courses.index')}}">Courses</a></li>
               
               <li><a href="{{route('supporters.index')}}">Supporters</a></li>
-              <li><a href="#">Statistics</a></li>
+              <li><a href="/statistics">Statistics</a></li>
             </ul>
           </li>
           @endrole
