@@ -42,7 +42,7 @@
       <td>
       <a class="btn  btn-success" href="{{route('course.view',['course' => $value['id'] ])}}"> View</a>
       @role('admin|teacher')
-      <a class="btn  btn-primary" >Edit</a>
+      <a href="{{route('course.edit',['course' => $value['id'] ])}}" class="btn btn-primary">Edit</a>
       <form method="POST" action ="/courses/{{$value['id']}}/delete">
       @csrf
       @method('DELETE')

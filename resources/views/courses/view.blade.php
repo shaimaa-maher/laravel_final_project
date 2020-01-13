@@ -1,17 +1,33 @@
 @extends('layouts.master')
 @section('content')
-
-<div class="card mt-5">
-  <div class="card-header">
-    Course Info
+<!-- <div style="60%;margin:auto"> -->
+  <div class="row">
+    <div class="col-6 m-3">
+      <div class="card">
+        <div class="card-header">
+          Course info
+        </div>
+        <div class="card-body">
+          <p>
+            <span class="font-weight-bold">Course name:</span>
+            <span class="card-text"> {{$course['name']}} </span>
+          </p>
+          <p>
+            <span class="font-weight-bold">Price:</span>
+            <span class="card-text"> {{$course['price']}}</span>
+          </p>
+          <p>
+            <span class="font-weight-bold">Start date:</span>
+            <span class="card-text"> {{$course['start_date']}}</span>
+          </p>
+          <p>
+            <span class="font-weight-bold">End date:</span>
+            <span class="card-text"> {{$course['end_date']}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-    <h5 class="card-title"> name:-</h5>
-    <span class="card-text">{{$course['name']}}</span>
-    <h5 class="card-title"> price:-</h5>
-    <span class="card-text">{{number_format(($course['price'] /100), 2, '.', ' ')}}</span>
-  </div>
-</div>
-
+<!-- </div> -->
 
 @endsection
