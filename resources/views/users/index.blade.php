@@ -19,7 +19,7 @@
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
             <div class="butn text-center my-5">
-                   <a href="/users/create" class="btn btn-success ml-5 my-5 text-light bold rounded-pill p-3"> create Course</a>
+                   <a href="/users/create" class="btn btn-success ml-5 my-5 text-light bold rounded-pill p-3"> Create User</a>
 
               </div>
               <table class="table table-hover">
