@@ -227,10 +227,13 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="{{route('courses.index')}}">Courses</a></li>
+              
               <li><a href="#">Supporters</a></li>
             </ul>
           </li>
           @endrole
+
+          <!-- //supporter -->
           @role('supporter')
           <li class="treeview">
             <a href="#"><i class="fa fa-link"></i> <span>Courses</span>

@@ -14,18 +14,11 @@ class CourseController extends Controller
         ]);
     }
     
-    public function show()
-    {
-       
-         return view('teacher.index', [
-            'courses' => Course::all(),
-         ]);
 
-     }
 
     public function create()
     {
-        return view('teacher.create');
+        return view('courses.create');
     }
 
     public function store(Request $request)
@@ -41,7 +34,7 @@ class CourseController extends Controller
             'supporter_id' => $request->supporter_id,
         ]);
 
-        return redirect()->route('teacher.index');
+        return redirect()->route('courses.index');
     }
 
     public function view($course)

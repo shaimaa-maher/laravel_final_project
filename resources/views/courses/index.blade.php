@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<form action ="/teacher/create">
+<form action ="/course/create">
 <div class="container">
   <div class="row">
     <div class="col text-center pt-5 pb-5">

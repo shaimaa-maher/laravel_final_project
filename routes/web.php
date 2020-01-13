@@ -24,14 +24,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users', 'UserController@index');
 Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy');
 Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
-
+//courses
 Route::get('/courses', 'CourseController@index')->name('courses.index');
 Route::get('/courses/{course}', 'CourseController@view')->name('course.view');
-Route::get("/courses/{course}/edit", 'CourseController@edit')->name('course.edit');
 Route::patch("/course/{course}", 'CourseController@update')->name('course.update');
+Route::get("/courses/{course}/edit", 'CourseController@edit')->name('course.edit');
+Route::get('/course/create', 'CourseController@create');
+Route::post('/courses/course', 'CourseController@store');
+//supporter
+Route::get('/supporter/index', 'SupporterController@index')->name('supporter.index');
+Route::get('/supporter/create', 'CourseController@create');
+Route::post('/supporter', 'CourseController@store');
 
-Route::get('/teacher/index', 'CourseController@show')->name('teacher.index');
-Route::get('/teacher/create', 'CourseController@create');
-Route::post('/teacher/courses', 'CourseController@store');
-// Route::get('/courses/{course}/edit','CourseController@edit')->name('courses.edit');
-// Route::put('/courses/{course}','CourseController@update');
