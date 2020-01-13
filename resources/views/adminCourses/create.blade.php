@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div style="width: 60%; margin:auto">
+
     <div class="box box-warning">
         <div class="box-header with-border">
             <h3 class="box-title">Create New Course</h3>
@@ -19,6 +19,11 @@
                 <div class="form-group">
                     <label class="control-label" for="inputSuccess">Cover_img</label>
                     <input type="file" class="form-control" id="inputSuccess" name="cover_img">
+                    @error('cover_img')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="inputWarning">Start_Date</label>
@@ -63,5 +68,5 @@
                 </div>
             </form>
         </div>
-    </div>
+
     @endsection

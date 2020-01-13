@@ -51,10 +51,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'avatar' => ['sometimes','image','mimes:jpeg,jpg,png','max:5000']
+            'avatar' => ['sometimes','image','mimes:jpeg,jpg,png','max:5000'],
+            'national_id'=>['unique:users','required','min:14','max:14']
         ]);
     }
 
@@ -72,6 +74,7 @@ class RegisterController extends Controller
             $avatar_path = public_path('bower_components/AdminLTE/dist/img/');
             $avatar->move($avatar_path,$avatar_name);
             return User::create([
+                'national_id'=>$data['national_id'],
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),

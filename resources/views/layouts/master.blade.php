@@ -215,7 +215,18 @@
         <ul class="sidebar-menu">
         @role('admin')
           <!-- Optionally, you can add icons to the links -->
-          <li class="active"><a href="{{url('/users')}}"><i class="fa fa-link"></i> <span>Users</span></a></li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-link"></i> <span>Users</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+            <li><a href="{{url('/users')}}"><i class="fa fa-link"></i> <span>All Users</span></a></li>
+              <li><a href="{{url('users/create')}}">Create User</a></li>
+            </ul>
+          </li>
+
           <li class="treeview">
             <a href="#"><i class="fa fa-link"></i> <span>courses</span>
               <span class="pull-right-container">
@@ -237,8 +248,10 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="#">Courses</a></li>
-              <li><a href="#">Supporters</a></li>
+              <li><a href="{{route('courses.index')}}">Courses</a></li>
+              
+              <li><a href="{{route('supporters.index')}}">Supporters</a></li>
+              <li><a href="#">Statistics</a></li>
             </ul>
           </li>
           @endrole

@@ -15,4 +15,9 @@ class Student extends Model
     {
         return $this->belongsToMany('App\Course','student_course');
     }
+
+    public function comment()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

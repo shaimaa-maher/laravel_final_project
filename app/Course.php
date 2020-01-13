@@ -4,8 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Course extends Model
 {
+    protected $fillable = [
+        'name','price', 'start_date', 'end_date','cover_img' ,'teacher_id' , 'supporter_id','teacher_name' , 'supporter_name'
+    ];
     
     public function supporter()
     {

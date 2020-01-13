@@ -13,4 +13,10 @@ class Comment extends Model
     {
         return $this->belongsTo('App\Course');
     }
+
+    public function student()
+    {
+        return $this->belongsTo('App\Student');
+    }
+
 }

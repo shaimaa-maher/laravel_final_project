@@ -25,6 +25,9 @@
                   <th>price</th>
                   <th>techer_id</th>
                   <th>Supporter_id</th>
+                  <th>teacher Name</th>
+                  <th>Supporter Name</th>
+
                 </tr>
 
                 @foreach($courses as $index => $course)
@@ -34,6 +37,18 @@
                   <td>{{$course['price']}}</td>
                   <td>{{$course['teacher_id']}}</td>
                   <td>{{$course['supporter_id']}}</td>
+                  <td>{{$course['teacher_name']}}</td>
+                  <td>{{$course['supporter_name']}}</td>
+                  <td>
+                    <a href="{{ route('adminCourses.show',['course' => $course['id']]) }}"class="btn btn-success text-light " >View </a>
+                    <a  href="{{ route('adminCourses.edit',['course' => $course['id']]) }}" class="btn btn-info text-light ">Edit</a>
+                    <form method="post" action="{{route('adminCourses.destroy',['course' => $course['id'] ])}}" style="display: inline-block">
+                      @csrf
+                      @method('delete')   
+               
+                <button onclick="return confirm('Are You Sure You Want To delete')" class="btn bg-danger" type="submit">Delete</button>
+            </form>
+                  </td>
                  
                 </tr>
                 
