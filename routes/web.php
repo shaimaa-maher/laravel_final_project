@@ -31,6 +31,8 @@ Route::patch("/course/{course}", 'CourseController@update')->name('course.update
 Route::get("/courses/{course}/edit", 'CourseController@edit')->name('course.edit');
 Route::get('/course/create', 'CourseController@create');
 Route::post('/courses/course', 'CourseController@store');
+Route::delete('/courses/{course}', 'CourseController@destroy')->name('course.destroy');
+
 //supporter
 Route::get('/supporters', 'SupporterController@index')->name('supporters.index');
 Route::get('/supporter/create', 'SupporterController@create');

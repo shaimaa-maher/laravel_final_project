@@ -74,4 +74,11 @@ class CourseController extends Controller
         ]);
         return redirect()->route('courses.index');
     }
+
+    public function destroy($id)
+    {
+        $course = Course::find($id);
+        $course->delete();
+        return redirect()->route('courses.index');
+    }
 }

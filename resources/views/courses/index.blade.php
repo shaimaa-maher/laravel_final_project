@@ -19,7 +19,6 @@
       <th scope="col">Cover_img</th>
       <th scope="col">Start_date</th>
       <th scope="col">End_date</th>
-      <th scope="col">teacher_id</th>
       <th scope="col">Supporter_id</th>
       <th scope="col">Created_at</th>
       <th scope="col">Actions</th>
@@ -37,13 +36,20 @@
       <td>{{$value['cover_img']}}</td>
       <td>{{$value['start_date']}}</td>
       <td>{{$value['end_date']}}</td>      
-      <td>{{$value['teacher_id']}}</td>
       <td>{{$value['supporter_id']}}</td>
       <td>{{$value['created_at']}}</td>
       <td>
       <a class="btn  btn-success" href="{{route('course.view',['course' => $value['id'] ])}}"> View</a>
+
       @role('admin|teacher')
-      <a href="{{route('course.edit',['course' => $value['id'] ])}}" class="btn btn-primary">Edit</a>
+      <a href="{{route('course.edit',['course' => $value['id'] ])}}" class="btn btn-primary">Edit</a>     
+       <form action="{{route('course.destroy',['course' => $value['id'] ])}}" method="post">
+          <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+          @method("delete")
+          @csrf
+        </form>
+
+
      
       @endrole
       </td>
