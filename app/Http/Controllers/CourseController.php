@@ -50,6 +50,8 @@ class CourseController extends Controller
         $course = Course::find($id);
         return view('courses.edit', ['course' => $course]);
     }
+
+    
     public function update(Request $request, $id)
     {
         $course = Course::find($id);

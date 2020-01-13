@@ -32,7 +32,9 @@ Route::get("/courses/{course}/edit", 'CourseController@edit')->name('course.edit
 Route::get('/course/create', 'CourseController@create');
 Route::post('/courses/course', 'CourseController@store');
 //supporter
-Route::get('/supporter/index', 'SupporterController@index')->name('supporter.index');
-Route::get('/supporter/create', 'CourseController@create');
-Route::post('/supporter', 'CourseController@store');
+Route::get('/supporters', 'SupporterController@index')->name('supporters.index');
+Route::get('/supporter/create', 'SupporterController@create');
+Route::post('/supporters/supporter', 'SupporterController@store');
+
+
 
