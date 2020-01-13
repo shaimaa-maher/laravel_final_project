@@ -30,7 +30,7 @@ Route::get('/courses/{course}', 'CourseController@view')->name('course.view');
 Route::get("/courses/{course}/edit", 'CourseController@edit')->name('course.edit');
 Route::patch("/course/{course}", 'CourseController@update')->name('course.update');
 
-Route::get('/teacher/courses', 'CourseController@show')->name('teacher.index');
+Route::get('/teacher/index', 'CourseController@show')->name('teacher.index');
 Route::get('/teacher/create', 'CourseController@create');
 Route::post('/teacher/courses', 'CourseController@store');
 // Route::get('/courses/{course}/edit','CourseController@edit')->name('courses.edit');

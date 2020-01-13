@@ -10,16 +10,18 @@ class CourseController extends Controller
     public function index()
     {
         return view('courses.index', [
-            'courses' => Course::all()
+            'courses' => Course::all(),
         ]);
     }
+    
     public function show()
     {
-        return view('teacher.index', [
+       
+         return view('teacher.index', [
             'courses' => Course::all(),
-            // where('teacher_id' == auth()->user()->id)
-        ]);
-    }
+         ]);
+
+     }
 
     public function create()
     {

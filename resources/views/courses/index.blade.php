@@ -29,6 +29,7 @@
   <tbody>
 
     @foreach($courses as $index => $value) 
+    @if($value['teacher_id']==auth()->user()->id)
       <tr>
       <th scope="row">{{$value['id']}}</th>
       <td>{{$value['name']}}</td>
@@ -43,15 +44,10 @@
       <a class="btn  btn-success" href="{{route('course.view',['course' => $value['id'] ])}}"> View</a>
       @role('admin|teacher')
       <a href="{{route('course.edit',['course' => $value['id'] ])}}" class="btn btn-primary">Edit</a>
-      <form method="POST" action ="/courses/{{$value['id']}}/delete">
-      @csrf
-      @method('DELETE')
-      <button onclick="return confirm('Are you sure that you want to delete?')" class="btn btn-danger">
-      Delete
-      </button>
-      </form>
+     
       @endrole
       </td>
+      @endif
       @endforeach
 
   </tbody>
