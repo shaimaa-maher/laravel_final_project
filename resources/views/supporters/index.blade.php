@@ -36,7 +36,7 @@
       <td>{{$value['created_at']}}</td>      
       <td>
       @role('admin|teacher')
-      <a href="#" class="btn btn-primary">Edit</a>
+      <a href="{{route('supporter.edit',['supporter' => $value['id'] ])}}" class="btn btn-primary">Edit</a>
       <form method="POST" action ="/supporters/{{$value['id']}}/delete">
       @csrf
       @method('DELETE')
