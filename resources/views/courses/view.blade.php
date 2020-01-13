@@ -41,14 +41,6 @@
               <p class="text-muted " style="font-size:25px">{{$course['end_date']}}</p>
               <hr>
 
-              <h2 style="font-weight:bold"><i class="fa fa-calender margin-r-5"></i>Teacher Name: </h2>
-              <p class="text-muted" style="font-size:25px"></p>
-              <hr>
-
-              <h2 style="font-weight:bold"><i class="fa fa-pencil margin-r-5"></i>Supporter Name: </h2>
-              <p class="text-muted " style="font-size:25px"></p>
-              <hr>
-          
 
               <h2 style="font-weight:bold"><i class="fa fa-file-text-o margin-r-5"></i> Notes</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>

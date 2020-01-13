@@ -28,9 +28,7 @@
                   <th>Name</th>
                   <th>price</th>
                   <th>teacher_id</th>
-                  <th>teacher_Name</th>
                   <th>Supporter_id</th>
-                  <th>Supporter_name</th>
                   <th>Action</th>
                 </tr>
 
@@ -40,9 +38,7 @@
                   <td>{{$course['name']}}</td>
                   <td>{{$course['price']}}</td>
                   <td>{{$course['teacher_id']}}</td>
-                  <td>{{$course['teacher_name']}}</td>
                   <td>{{$course['supporter_id']}}</td>
-                  <td>{{$course['Supporter_name']}}</td>
 
                   <td>
                      <a href="{{ route('courses.show',['course' => $course['id']]) }}"class="btn btn-success text-light " >View </a>

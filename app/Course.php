@@ -8,7 +8,7 @@ class Course extends Model
 {
 
     protected $fillable = [
-        'name', 'start_date', 'end_date','cover_img' ,'teacher_id' , 'teacher_name'
+        'name', 'start_date', 'end_date','cover_img' ,'teacher_id' , 'supporter_id'
     ];
     
     public function supporter()
