@@ -4,9 +4,45 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+
+
+    public function create()
+    {
+        return view('users.create');
+
+       
+    }
+
+    function store(Request $request)
+    {
+       
+                
+         if(request()->has('avatar')){
+            $user = new User;
+
+            $avatar = $request->file('avatar');
+            $avatar_name = time().'.'.$avatar->getClientOriginalExtension();
+            $avatar_path = public_path('bower_components/AdminLTE/dist/img/');
+            $avatar->move($avatar_path,$avatar_name);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->role =$request->role;
+        $user->password = Hash::make($request->password);
+        $user->avatar_url = 'bower_components/AdminLTE/dist/img/'.$avatar_name;
+        
+        $user->save();
+            
+        }
+        
+        return redirect()->route('users.index');
+    }
+
+
     public function index()
     {
         return view('users.index',[
@@ -49,3 +85,13 @@ class UserController extends Controller
       }
 
 }
+
+
+
+// return User::create([
+//     'name' => $data['name'],
+//     'email' => $data['email'],
+//     'password' => Hash::make($data['password']),
+//     'role' =>$data['role'],
+//     'avatar_url'=> 'bower_components/AdminLTE/dist/img/'.$avatar_name,
+// ]);

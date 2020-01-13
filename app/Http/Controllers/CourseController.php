@@ -12,7 +12,7 @@ class CourseController extends Controller
     public function index()
     {
         return view('courses.index',[
-            'courses' => Course::paginate(3),
+            'courses' => Course::paginate(10),
         ]);
     }
 
@@ -30,7 +30,7 @@ class CourseController extends Controller
 
     function store(Request $request,User $user)
     {
-        $teacher_name=(User::where('id','=>',$request->teacher_id))->pluck('name')->first();
+        $teacher_name=(User::where('id','=',$request->teacher_id))->pluck('name')->first();
         $supporter_name=(User::where('id','=',$request->supporter_id))->pluck('name')->first();
                 
         Course::create([
@@ -42,7 +42,7 @@ class CourseController extends Controller
         'teacher_id'=>$request->teacher_id,
         'teacher_name'=> $teacher_name,
         'supporter_id'=> $request->supporter_id,
-        'Supporter_name'=> $supporter_name,
+        'supporter_name'=> $supporter_name,
 
         ]);
         return redirect()->route('courses.index');
@@ -51,8 +51,8 @@ class CourseController extends Controller
     public function edit($course ,User $user)
     {
         $course = Course::find($course);
-         $teacheres = (User::where('role','=','teacher'))->get();
-         $supporteres=(User::where('role','=','supporter'))->get();
+        $teacheres = (User::where('role','=','teacher'))->get();
+        $supporteres=(User::where('role','=','supporter'))->get();
         
       return view('courses.edit',[
           'course'=>$course,
@@ -62,6 +62,8 @@ class CourseController extends Controller
     }
 
     function update(Course $course,Request $request){
+        $course->teacher_name=(User::where('id','=',$request->teacher_id))->pluck('name')->first();
+        $course->supporter_name=(User::where('id','=',$request->supporter_id))->pluck('name')->first();
         $course->name= $request->name;
         $course->price= $request->price;
         $course->start_date= $request->start_date;
@@ -69,9 +71,7 @@ class CourseController extends Controller
         $course->cover_img= $request->cover_img;
         $course->teacher_id= $request->teacher_id;
         $course->supporter_id= $request->supporter_id;
-
-
-
+    
         $course->save();
         return redirect()->route('courses.index');
     }

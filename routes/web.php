@@ -23,6 +23,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/users','UserController@index')->name('users.index');
+Route::get('/users/create', 'UserController@create');
+Route::post('/users', 'UserController@store');
 Route::delete('/users/{user}','UserController@destroy')->name('users.destroy');
 Route::get('/users/{user}/edit','UserController@edit')->name('users.edit');
 Route::put(	'/users/{user}', 'UserController@update')->name('users.update');

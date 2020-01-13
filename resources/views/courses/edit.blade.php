@@ -53,7 +53,7 @@
           <select name="teacher_id" class="form-control">
             <option>Select teacher</option><!--selected by default-->
              @foreach($teacheres as $teacher)
-            <option value="{{ $teacher->id }}">
+            <option value="{{$teacher->id }}">
                  {{ $teacher->name }}
             </option>
              @endforeach
@@ -63,8 +63,8 @@
           <select name="supporter_id" class="form-control">
             <option>Select Supporter</option><!--selected by default-->
              @foreach($supporteres as $supporter)
-            <option value="{{ $supporter->id }}">
-                 {{ $supporter->name }}
+            <option value="{{$supporter->id}}">
+                 {{$supporter->name }}
             </option>
              @endforeach
         </select>
