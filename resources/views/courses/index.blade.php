@@ -4,7 +4,10 @@
 <div class="container">
   <div class="row">
     <div class="col text-center pt-5 pb-5">
+    @role('admin|teacher')
     <button type="submit" class="btn btn-success btn-lg">New course</button>
+    @endrole
+
     </div>
   </div>
 </div>

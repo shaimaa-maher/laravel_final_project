@@ -14,10 +14,6 @@
 
 <form method="POST" action ="/supporters/supporter" class="pl-5 pt-5">
  @csrf
-  <div class="form-group">
-    <label>id</label>
-    <input type="text" name="id" class="form-control">
- </div>
 
 <div class="form-group">
     <label >national_id</label>
