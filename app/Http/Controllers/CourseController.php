@@ -8,7 +8,7 @@ class CourseController extends Controller
 {
     public function index(){
          
-        return view('teacher.index', [
+        return view('courses.index', [
             'courses' => Course::all()
         ]);
     }
@@ -46,11 +46,10 @@ class CourseController extends Controller
     {   
         
 
-        return view('teacher.view',[
+        return view('courses.view',[
             'course'=>Course::find($course),
         
         ]);
-        // another way return request()->post;
     }
 
 }
