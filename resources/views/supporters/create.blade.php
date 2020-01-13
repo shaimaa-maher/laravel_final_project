@@ -37,7 +37,7 @@
 
     <label>course_id</label>
     <input type="text" name="course_id" class="form-control">
-  </div>
+</div>
 
 
   <button type="submit" name ="submit" class="btn btn-success">Create</button>
